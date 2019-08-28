@@ -1,0 +1,44 @@
+<h1>Welcome!</h1>
+
+<!--Name the class (Just a Name)-->
+<div class="play-container" [ngStyle]="{
+    'background-color': 'WHITE',
+    'border':           '4px solid black'
+    
+}"> 
+
+    <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter}} times.</p> 
+    <!--You can make an event and you wrap it around () So we made a (click) event. You then bind it to a method. Just like called voids in C#-->
+    <!--The {{ ClickCounter }} this displays a propery or variable which is defined from a property in home.component.ts-->
+</div>
+
+<!--Like CSS Styles but in an if statement-->
+<div class="play-container" [ngStyle]="{
+    'background-color': 'white',
+    'border':           '4px solid black'
+    
+}">
+
+<p>
+    <input type="text" [(ngModel)]="name" > <!--this [{}] Is what is called 2 way dataBanding trhis will send and recieve drom and too the componant 
+        logic and home.componant.ts In order for this to work we need to go to app.module.ts -->
+    
+    <br>
+    <strong>You Said: </strong> {{ name }}
+</p>
+</div>
+
+<!--You can also create classes just like styles you create a method, but you will edit them in the .ts file like you would with the {{}} files-->
+<div class="play-container" [ngClass]="setClasses()" > 
+
+        <p>
+            <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none"> <!--Like a c# if Statement you need to delcare it twice this top one is If it is TRUE-->
+                <p>The click counter <strong>IS GREATER</strong> than 4.</p>
+            </ng-template>
+
+            <ng-template #none> <!--This one is if it is FALSE-->
+                <p>The click counter <strong>no greater</strong> than 4.</p>
+            </ng-template>
+        </p>
+        </div>
+   

@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*We now need to Import some Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+/* Time to Define out colours We can name the different Colours */
+
+$primary: rgb(111, 0, 255);
+
+/* We are also going to make a ruleset which defines how a part of the page need to be set out */
+
+body {
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 18px;
+}
+
+/* We are also going to define the styles for the containers */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Time to change how the header looks */
+
+header {
+    background: $primary;
+    padding: 1em 0;
+
+    /* We are also going to make a ruleset of the links - A is for that <a> page we did in the HTML section  */
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a.logo {
+        font-weight: bold;
+    }
+
+    nav {
+        float: right;
+
+        ul{
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+        }
+
+        /* Time to target the Ancor Text */
+
+        li a{
+            padding: 1em;
+
+            /* What happen when you hver over the link */
+            &:hover {
+                background: darken($primary, 10%);
+            }
+        }
+    }
+
+
+}
+
+
+h1 {
+    margin-top: 2em;
+}

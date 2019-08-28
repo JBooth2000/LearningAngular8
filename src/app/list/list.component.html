@@ -1,0 +1,10 @@
+<h1>Breweries</h1>
+
+<!-- The *ngIf means only show this part if The following is avaialble or is there.-->
+<ul *ngIf="brews">
+    <li *ngFor="let brew of brews">
+        <p class="name">{{ brew.name }}</p>
+        <p class="Country">{{ brew.country }}</p>
+        <a href="{{ brew.website_url }}" class="site">site</a>
+    </li>
+</ul>
